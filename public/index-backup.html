@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VitalEase Collective</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header aria-label="Site header">
+      <h1>VitalEase</h1>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="cart-summary" class="cart-summary" aria-label="Cart summary">
+        <button id="open-cart" class="cart-icon-btn" aria-label="Open cart">
+          🛒 Cart
+        </button>
+      </div>
+    </header>
+
+    <div
+      id="cart-drawer"
+      class="cart-drawer"
+      aria-label="Cart drawer"
+      tabindex="-1"
+    >
+      <div class="cart-drawer-header">
+        <span>🛒 Your Cart</span>
+        <button id="close-cart" class="close-cart-btn" aria-label="Close cart">
+          &times;
+        </button>
+      </div>
+      <div class="cart-drawer-content" id="cart-drawer-content">
+        <p class="cart-empty">Your cart is empty.</p>
+      </div>
+      <div
+        class="cart-drawer-footer"
+        id="cart-drawer-footer"
+        style="display: none"
+      >
+        <div class="cart-total-row">
+          Total: <span id="drawer-cart-total">$0.00</span>
+        </div>
+        <button class="checkout-btn" disabled>Checkout</button>
+      </div>
+    </div>
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+
+    <main>
+      <section
+        id="hero"
+        style="
+          background: #eaf4ff;
+          border-radius: 24px;
+          box-shadow: 0 2px 16px rgba(30, 41, 59, 0.07);
+          margin: 48px 0 40px 0;
+          padding: 48px 24px 40px 24px;
+          text-align: center;
+        "
+      >
+        <h2
+          style="
+            font-size: 2.5rem;
+            color: #1746a2;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+          "
+        >
+          Feel Better, Live Better
+        </h2>
+        <p
+          style="
+            font-size: 1.3rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+          "
+        >
+          Discover posture solutions and wellness essentials designed for your
+          everyday comfort and confidence.
+        </p>
+      </section>
+
+      <section id="home">
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="images/posture corrector.jpg"
+              alt="Posture Correcting Brace"
+              width="200"
+              height="200"
+            />
+            <h3>Posture Correcting Brace</h3>
+            <div class="product-pricing">
+              <span class="old-price">$59.99</span>
+              <span class="sale-price">$39.99</span>
+            </div>
+            <p>
+              Improve your posture and comfort with our adjustable brace.
+              Designed for daily wear and support.
+            </p>
+            <div class="bundle-options">
+              <label
+                for="size"
+                style="font-weight: 600; margin-bottom: 6px; display: block"
+              >
+                Size:
+              </label>
+              <select
+                id="size"
+                name="size"
+                required
+                style="
+                  width: 100%;
+                  padding: 8px 6px;
+                  margin-bottom: 12px;
+                  border-radius: 8px;
+                  border: 1px solid #e5e7eb;
+                "
+              >
+                <option value="" disabled selected>Select size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
+                <option value="XX-Large">XX-Large</option>
+              </select>
+              <button class="add-cart-btn" onclick="addBundleToCart(1, 39.99)">
+                1 Brace - $39.99
+              </button>
+              <button class="add-cart-btn" onclick="addBundleToCart(2, 69.99)">
+                2 Braces - $69.99
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          VitalEase Collective is dedicated to your health and wellness. Our
+          mission is to provide quality products that help you feel your best
+          every day. We believe in simple solutions for better living.
+        </p>
+      </section>
+
+      <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+          <strong>Jane D.</strong>
+          <div class="review-stars" aria-label="5 stars">★★★★★</div>
+          <p>
+            "This brace has made a huge difference in my posture. Highly
+            recommend!"
+          </p>
+        </div>
+        <div class="review">
+          <strong>Mike S.</strong>
+          <div class="review-stars" aria-label="5 stars">★★★★★</div>
+          <p>
+            "Comfortable and easy to use. I wear it at work and feel less back
+            pain."
+          </p>
+        </div>
+        <div class="review">
+          <strong>Emily R.</strong>
+          <div class="review-stars" aria-label="5 stars">★★★★★</div>
+          <p>"Fast shipping and great customer service. Will buy again!"</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@vitalease.com</p>
+        <p>Phone: (555) 123-4567</p>
+        <form aria-label="Contact form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 VitalEase Collective. All rights reserved.</p>
+    </footer>
+    <script>
+      // Slide-out cart logic for 3 bundle options, now supports multiple sizes
+      const cartDrawer = document.getElementById("cart-drawer");
+      const cartBackdrop = document.getElementById("cart-backdrop");
+      const openCartBtn = document.getElementById("open-cart");
+      const closeCartBtn = document.getElementById("close-cart");
+      const cartDrawerContent = document.getElementById("cart-drawer-content");
+      const cartDrawerFooter = document.getElementById("cart-drawer-footer");
+      const drawerCartTotal = document.getElementById("drawer-cart-total");
+
+      let cart = [];
+
+      function openCart() {
+        cartDrawer.classList.add("open");
+        cartBackdrop.classList.add("show");
+        cartDrawer.focus();
+        updateCartDrawer();
+      }
+      function closeCart() {
+        cartDrawer.classList.remove("open");
+        cartBackdrop.classList.remove("show");
+      }
+      openCartBtn.onclick = openCart;
+      closeCartBtn.onclick = closeCart;
+      cartBackdrop.onclick = closeCart;
+
+      function addBundleToCart(qty, price) {
+        const size = document.getElementById("size").value;
+        if (!size) {
+          alert("Please select a size before adding to cart.");
+          document.getElementById("size").focus();
+          return;
+        }
+        // Check if this size/qty combo already exists, if so, increment
+        const existing = cart.find(
+          (item) => item.qty === qty && item.size === size
+        );
+        if (existing) {
+          existing.count = (existing.count || 1) + 1;
+        } else {
+          cart.push({ qty, price, size, count: 1 });
+        }
+        openCart();
+        updateCartDrawer();
+      }
+      function updateCartDrawer() {
+        if (!cart.length) {
+          cartDrawerContent.innerHTML =
+            '<p class="cart-empty">Your cart is empty.</p>';
+          cartDrawerFooter.style.display = "none";
+        } else {
+          let total = 0;
+          cartDrawerContent.innerHTML = cart
+            .map((item, idx) => {
+              total += item.price * item.count;
+              return `
+              <div class="cart-item">
+                <div class="cart-item-info">
+                  <strong>Posture Correcting Brace</strong><br>
+                  <span>${item.qty} brace${
+                item.qty > 1 ? "s" : ""
+              } bundle</span><br>
+                  <span>Size: <b>${item.size}</b></span>
+                  <span style="display:block; color:#64748b; font-size:0.98em;">Qty: ${
+                    item.count
+                  }</span>
+                </div>
+                <div class="cart-item-price">$${(
+                  item.price * item.count
+                ).toFixed(2)}</div>
+                <button class="remove-cart-btn" onclick="removeCartItem(${idx})" aria-label="Remove item">&times;</button>
+              </div>
+            `;
+            })
+            .join("");
+          drawerCartTotal.textContent = `$${total.toFixed(2)}`;
+          cartDrawerFooter.style.display = "";
+        }
+      }
+      function removeCartItem(idx) {
+        cart.splice(idx, 1);
+        updateCartDrawer();
+      }
+    </script>
+  </body>
+</html>

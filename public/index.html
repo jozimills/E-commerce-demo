@@ -1,283 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VitalEase Collective</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header aria-label="Site header">
-      <h1>VitalEase</h1>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div id="cart-summary" class="cart-summary" aria-label="Cart summary">
-        <button id="open-cart" class="cart-icon-btn" aria-label="Open cart">
-          🛒 Cart
-        </button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteShop - Premium E-commerce Experience</title>
+    <meta name="description" content="Discover premium products with exceptional quality and unbeatable prices. Shop electronics, fashion, home goods and more.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Top Banner -->
+        <div class="header-top">
+            <div class="container">
+                🎉 Free shipping on orders over $75 | 30-day returns | 24/7 customer support
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <!-- Logo -->
+                    <a href="#" class="logo">
+                        <div class="logo-icon">🛍️</div>
+                        EliteShop
+                    </a>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Search for products, brands, categories...">
+                        <button class="search-btn" aria-label="Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Header Actions -->
+                    <div class="header-actions">
+                        <a href="#" class="header-action-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Account
+                        </a>
+                        <a href="#" class="header-action-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04097 1.5487 8.5C1.5487 9.95903 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.2225 22.4518 8.5C22.4518 7.7775 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.1208 20.84 4.61V4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Wishlist
+                        </a>
+                        <button id="open-cart" class="header-action-btn" style="position: relative;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13M9 22C9.6 22 10 21.6 10 21S9.6 20 9 20 8 20.4 8 21 8.4 22 9 22ZM20 22C20.6 22 21 21.6 21 21S20.6 20 20 20 19 20.4 19 21 19.4 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Cart
+                            <span id="cart-count" class="cart-badge" style="display: none;">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <div class="container">
+                <nav class="main-nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#electronics" class="nav-link">Electronics</a>
+                    <a href="#fashion" class="nav-link">Fashion</a>
+                    <a href="#home-garden" class="nav-link">Home & Garden</a>
+                    <a href="#sports" class="nav-link">Sports</a>
+                    <a href="#beauty" class="nav-link">Beauty</a>
+                    <a href="#deals" class="nav-link">🔥 Deals</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <div
-      id="cart-drawer"
-      class="cart-drawer"
-      aria-label="Cart drawer"
-      tabindex="-1"
-    >
-      <div class="cart-drawer-header">
-        <span>🛒 Your Cart</span>
-        <button id="close-cart" class="close-cart-btn" aria-label="Close cart">
-          &times;
-        </button>
-      </div>
-      <div class="cart-drawer-content" id="cart-drawer-content">
-        <p class="cart-empty">Your cart is empty.</p>
-      </div>
-      <div
-        class="cart-drawer-footer"
-        id="cart-drawer-footer"
-        style="display: none"
-      >
-        <div class="cart-total-row">
-          Total: <span id="drawer-cart-total">$0.00</span>
-        </div>
-        <button class="checkout-btn" disabled>Checkout</button>
-      </div>
-    </div>
-    <div id="cart-backdrop" class="cart-backdrop"></div>
-
+    <!-- Main Content -->
     <main>
-      <section
-        id="hero"
-        style="
-          background: #eaf4ff;
-          border-radius: 24px;
-          box-shadow: 0 2px 16px rgba(30, 41, 59, 0.07);
-          margin: 48px 0 40px 0;
-          padding: 48px 24px 40px 24px;
-          text-align: center;
-        "
-      >
-        <h2
-          style="
-            font-size: 2.5rem;
-            color: #1746a2;
-            margin-bottom: 0.5em;
-            font-weight: 700;
-          "
-        >
-          Feel Better, Live Better
-        </h2>
-        <p
-          style="
-            font-size: 1.3rem;
-            color: #475569;
-            max-width: 600px;
-            margin: 0 auto;
-          "
-        >
-          Discover posture solutions and wellness essentials designed for your
-          everyday comfort and confidence.
-        </p>
-      </section>
-
-      <section id="home">
-        <div class="product-grid">
-          <div class="product-card">
-            <img
-              src="images/posture corrector.jpg"
-              alt="Posture Correcting Brace"
-              width="200"
-              height="200"
-            />
-            <h3>Posture Correcting Brace</h3>
-            <div class="product-pricing">
-              <span class="old-price">$59.99</span>
-              <span class="sale-price">$39.99</span>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Discover Amazing Products</h1>
+                    <p>Premium quality meets unbeatable prices. Shop thousands of products from trusted brands with fast, free delivery.</p>
+                    <div class="cta-buttons">
+                        <a href="#products" class="btn btn-primary">Shop Now</a>
+                        <a href="#deals" class="btn btn-secondary">View Deals</a>
+                    </div>
+                </div>
             </div>
-            <p>
-              Improve your posture and comfort with our adjustable brace.
-              Designed for daily wear and support.
-            </p>
-            <div class="bundle-options">
-              <label
-                for="size"
-                style="font-weight: 600; margin-bottom: 6px; display: block"
-              >
-                Size:
-              </label>
-              <select
-                id="size"
-                name="size"
-                required
-                style="
-                  width: 100%;
-                  padding: 8px 6px;
-                  margin-bottom: 12px;
-                  border-radius: 8px;
-                  border: 1px solid #e5e7eb;
-                "
-              >
-                <option value="" disabled selected>Select size</option>
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="X-Large">X-Large</option>
-                <option value="XX-Large">XX-Large</option>
-              </select>
-              <button class="add-cart-btn" onclick="addBundleToCart(1, 39.99)">
-                1 Brace - $39.99
-              </button>
-              <button class="add-cart-btn" onclick="addBundleToCart(2, 69.99)">
-                2 Braces - $69.99
-              </button>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚚</div>
+                        <h3 class="feature-title">Free Shipping</h3>
+                        <p class="feature-description">Free delivery on all orders over $75. Fast and reliable shipping worldwide.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">↩️</div>
+                        <h3 class="feature-title">Easy Returns</h3>
+                        <p class="feature-description">30-day hassle-free returns. Not satisfied? Send it back for a full refund.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">Secure Shopping</h3>
+                        <p class="feature-description">Your data is protected with industry-leading security and encryption.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-description">Get help anytime with our round-the-clock customer support team.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="about">
-        <h2>About Us</h2>
-        <p>
-          VitalEase Collective is dedicated to your health and wellness. Our
-          mission is to provide quality products that help you feel your best
-          every day. We believe in simple solutions for better living.
-        </p>
-      </section>
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">Discover our handpicked selection of premium products with exceptional quality and value.</p>
+                </div>
 
-      <section id="reviews">
-        <h2>Customer Reviews</h2>
-        <div class="review">
-          <strong>Jane D.</strong>
-          <div class="review-stars" aria-label="5 stars">★★★★★</div>
-          <p>
-            "This brace has made a huge difference in my posture. Highly
-            recommend!"
-          </p>
-        </div>
-        <div class="review">
-          <strong>Mike S.</strong>
-          <div class="review-stars" aria-label="5 stars">★★★★★</div>
-          <p>
-            "Comfortable and easy to use. I wear it at work and feel less back
-            pain."
-          </p>
-        </div>
-        <div class="review">
-          <strong>Emily R.</strong>
-          <div class="review-stars" aria-label="5 stars">★★★★★</div>
-          <p>"Fast shipping and great customer service. Will buy again!"</p>
-        </div>
-      </section>
+                <!-- Product Filters -->
+                <div class="product-filters">
+                    <button class="filter-btn active" data-category="all">All Products</button>
+                    <button class="filter-btn" data-category="electronics">Electronics</button>
+                    <button class="filter-btn" data-category="fashion">Fashion</button>
+                    <button class="filter-btn" data-category="home">Home & Garden</button>
+                    <button class="filter-btn" data-category="health">Health & Wellness</button>
+                </div>
 
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@vitalease.com</p>
-        <p>Phone: (555) 123-4567</p>
-        <form aria-label="Contact form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </section>
+                <!-- Product Grid -->
+                <div class="product-grid" id="product-grid">
+                    <!-- Posture Corrector - Original Product -->
+                    <div class="product-card" data-category="health">
+                        <div class="product-image-container">
+                            <img src="images/posture corrector.jpg" alt="Posture Correcting Brace" class="product-image">
+                            <div class="product-badge">Sale</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Health & Wellness</div>
+                            <h3 class="product-title">Premium Posture Correcting Brace</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-text">(127 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$39.99</span>
+                                <span class="original-price">$59.99</span>
+                                <span class="discount">-33%</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('posture-brace', 39.99, 'Premium Posture Correcting Brace')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wireless Earbuds -->
+                    <div class="product-card" data-category="electronics">
+                        <div class="product-image-container">
+                            <div class="product-image" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🎧</div>
+                            <div class="product-badge">New</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Electronics</div>
+                            <h3 class="product-title">Wireless Bluetooth Earbuds Pro</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                                <span class="rating-text">(89 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$79.99</span>
+                                <span class="original-price">$99.99</span>
+                                <span class="discount">-20%</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('wireless-earbuds', 79.99, 'Wireless Bluetooth Earbuds Pro')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smart Watch -->
+                    <div class="product-card" data-category="electronics">
+                        <div class="product-image-container">
+                            <div class="product-image" style="background: linear-gradient(45deg, #ff6b6b 0%, #4ecdc4 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">⌚</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Electronics</div>
+                            <h3 class="product-title">Smart Fitness Watch</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-text">(203 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$199.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('smart-watch', 199.99, 'Smart Fitness Watch')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium T-Shirt -->
+                    <div class="product-card" data-category="fashion">
+                        <div class="product-image-container">
+                            <div class="product-image" style="background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%); display: flex; align-items: center; justify-content: center; color: #8b4513; font-size: 3rem;">👕</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Fashion</div>
+                            <h3 class="product-title">Premium Cotton T-Shirt</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                                <span class="rating-text">(156 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$24.99</span>
+                                <span class="original-price">$34.99</span>
+                                <span class="discount">-29%</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('premium-tshirt', 24.99, 'Premium Cotton T-Shirt')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffee Maker -->
+                    <div class="product-card" data-category="home">
+                        <div class="product-image-container">
+                            <div class="product-image" style="background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center; color: #5d4e75; font-size: 3rem;">☕</div>
+                            <div class="product-badge">Bestseller</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Home & Garden</div>
+                            <h3 class="product-title">Premium Coffee Maker</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-text">(312 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$129.99</span>
+                                <span class="original-price">$159.99</span>
+                                <span class="discount">-19%</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('coffee-maker', 129.99, 'Premium Coffee Maker')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yoga Mat -->
+                    <div class="product-card" data-category="health">
+                        <div class="product-image-container">
+                            <div class="product-image" style="background: linear-gradient(45deg, #96fbc4 0%, #f9f047 100%); display: flex; align-items: center; justify-content: center; color: #2d5016; font-size: 3rem;">🧘</div>
+                            <div class="product-quick-actions">
+                                <button class="quick-action-btn" title="Add to Wishlist">♡</button>
+                                <button class="quick-action-btn" title="Quick View">👁</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Health & Wellness</div>
+                            <h3 class="product-title">Eco-Friendly Yoga Mat</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                                <span class="rating-text">(78 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$49.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" onclick="addToCart('yoga-mat', 49.99, 'Eco-Friendly Yoga Mat')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About EliteShop</h2>
+                <p>At EliteShop, we're committed to providing you with the finest products at unbeatable prices. Our carefully curated selection includes everything from cutting-edge electronics to fashion essentials, all backed by our commitment to quality and customer satisfaction.</p>
+                <p>Founded in 2020, we've grown to become a trusted destination for millions of customers worldwide. Our mission is simple: to make premium products accessible to everyone while providing exceptional service every step of the way.</p>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Join thousands of satisfied customers who love shopping with us.</p>
+                </div>
+                
+                <div class="review">
+                    <strong>Sarah M.</strong>
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Amazing quality and fast shipping! The posture corrector has really helped with my back pain. Highly recommend!"</p>
+                </div>
+                
+                <div class="review">
+                    <strong>David L.</strong>
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Great selection of products and excellent customer service. The wireless earbuds are fantastic!"</p>
+                </div>
+                
+                <div class="review">
+                    <strong>Maria Rodriguez</strong>
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Love this store! Easy to navigate, secure checkout, and my orders always arrive quickly. Will definitely shop here again."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> support@eliteshop.com</p>
+                        <p><strong>Phone:</strong> 1-800-ELITE-SHOP (1-800-354-8374)</p>
+                        <p><strong>Live Chat:</strong> Available 24/7 on our website</p>
+                        <p><strong>Address:</strong> 123 Commerce Street, Business District, NY 10001</p>
+                    </div>
+                    <form>
+                        <h3>Send us a message</h3>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="return">Return/Exchange</option>
+                            <option value="product">Product Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 VitalEase Collective. All rights reserved.</p>
-    </footer>
-    <script>
-      // Slide-out cart logic for 3 bundle options, now supports multiple sizes
-      const cartDrawer = document.getElementById("cart-drawer");
-      const cartBackdrop = document.getElementById("cart-backdrop");
-      const openCartBtn = document.getElementById("open-cart");
-      const closeCartBtn = document.getElementById("close-cart");
-      const cartDrawerContent = document.getElementById("cart-drawer-content");
-      const cartDrawerFooter = document.getElementById("cart-drawer-footer");
-      const drawerCartTotal = document.getElementById("drawer-cart-total");
-
-      let cart = [];
-
-      function openCart() {
-        cartDrawer.classList.add("open");
-        cartBackdrop.classList.add("show");
-        cartDrawer.focus();
-        updateCartDrawer();
-      }
-      function closeCart() {
-        cartDrawer.classList.remove("open");
-        cartBackdrop.classList.remove("show");
-      }
-      openCartBtn.onclick = openCart;
-      closeCartBtn.onclick = closeCart;
-      cartBackdrop.onclick = closeCart;
-
-      function addBundleToCart(qty, price) {
-        const size = document.getElementById("size").value;
-        if (!size) {
-          alert("Please select a size before adding to cart.");
-          document.getElementById("size").focus();
-          return;
-        }
-        // Check if this size/qty combo already exists, if so, increment
-        const existing = cart.find(
-          (item) => item.qty === qty && item.size === size
-        );
-        if (existing) {
-          existing.count = (existing.count || 1) + 1;
-        } else {
-          cart.push({ qty, price, size, count: 1 });
-        }
-        openCart();
-        updateCartDrawer();
-      }
-      function updateCartDrawer() {
-        if (!cart.length) {
-          cartDrawerContent.innerHTML =
-            '<p class="cart-empty">Your cart is empty.</p>';
-          cartDrawerFooter.style.display = "none";
-        } else {
-          let total = 0;
-          cartDrawerContent.innerHTML = cart
-            .map((item, idx) => {
-              total += item.price * item.count;
-              return `
-              <div class="cart-item">
-                <div class="cart-item-info">
-                  <strong>Posture Correcting Brace</strong><br>
-                  <span>${item.qty} brace${
-                item.qty > 1 ? "s" : ""
-              } bundle</span><br>
-                  <span>Size: <b>${item.size}</b></span>
-                  <span style="display:block; color:#64748b; font-size:0.98em;">Qty: ${
-                    item.count
-                  }</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EliteShop</h3>
+                    <p>Your premium destination for quality products at unbeatable prices. Shop with confidence and enjoy exceptional service.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="font-size: 1.5rem;">📱 💻 🛍️ 📦</span>
+                    </div>
                 </div>
-                <div class="cart-item-price">$${(
-                  item.price * item.count
-                ).toFixed(2)}</div>
-                <button class="remove-cart-btn" onclick="removeCartItem(${idx})" aria-label="Remove item">&times;</button>
-              </div>
-            `;
-            })
-            .join("");
-          drawerCartTotal.textContent = `$${total.toFixed(2)}`;
-          cartDrawerFooter.style.display = "";
-        }
-      }
-      function removeCartItem(idx) {
-        cart.splice(idx, 1);
-        updateCartDrawer();
-      }
-    </script>
-  </body>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#deals">Special Deals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About EliteShop</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 EliteShop. All rights reserved. | Made with ❤️ for amazing customers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <span>🛒 Your Shopping Cart</span>
+            <button id="close-cart" class="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-drawer-content" id="cart-drawer-content">
+            <p class="cart-empty">Your cart is empty. Start shopping to add items!</p>
+        </div>
+        <div class="cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
+            <div class="cart-total-row">
+                <span>Total: <span id="cart-total">$0.00</span></span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Backdrop -->
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
