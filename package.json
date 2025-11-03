@@ -1,7 +1,7 @@
 {
-  "name": "acegamingequip",
+  "name": "e-commerce-demo",
   "version": "1.0.0",
-  "description": "first official e-commerce setup",
+  "description": "Professional e-commerce website template with beautiful design",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
